@@ -1,0 +1,173 @@
+body {
+  background-color: $black;
+  color: $white;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  position: fixed;
+  width: 100%;
+  background-color: $black;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid $green;
+  background-color: transparent;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  cursor: pointer;
+}
+
+#form-habits {
+  display: flex;
+  padding: 11.3rem 3rem 3rem;
+  width: fit-content;
+  .habits {
+    margin-top: 3.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .habit {
+    width: 4rem;
+    height: 4rem;
+
+    font-size: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .days {
+    display: flex;
+    gap: 3rem;
+    margin-left: 2rem;
+  }
+  .day {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    div {
+      margin-bottom: 0.5rem;
+      font-family: "Roboto Mono";
+      font-size: 1.25rem;
+      line-height: 125%;
+      color: $gray;
+      text-align: center;
+    }
+  }
+
+  input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 4rem;
+    height: 4rem;
+    border: 0.12rem solid $border;
+    border-radius: 0.5rem;
+    background: $input;
+    &:checked {
+      background: $green;
+      border: 0.12rem solid $border-green;
+    }
+  }
+}
+@media (max-width: 570px) {
+  button div {
+    display: none;
+  }
+}
+#msgInfo {
+  width: 18.755rem;
+  height: 3.75rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-info;
+  background-color: $bg-info;
+  border-color: $border-info;
+  font-family: "Inter";
+  border-radius: 0.25rem;
+  position: fixed;
+  bottom: 0.62rem;
+  right: 0.93rem;
+  transform: translateX(100%);
+  animation: moveleft 0.5s linear forwards;
+  display: none;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.3rem;
+    background: $color-info;
+    animation: anim 5s linear forwards;
+  }
+  strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+#msgSuccess {
+  width: 18.755rem;
+  height: 3.75rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-success;
+    background-color: $bg-success;
+    border-color: $border-success;
+  font-family: "Inter";
+  border-radius: 0.25rem;
+  position: fixed;
+  bottom: 0.62rem;
+  right: 0.93rem;
+  transform: translateX(100%);
+  animation: moveleft 0.5s linear forwards;
+  display: none;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.3rem;
+    background: $color-success;
+    animation: anim 5s linear forwards;
+  }
+  strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+@keyframes moveleft {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes anim {
+  100% {
+    width: 0;
+  }
+}
+
